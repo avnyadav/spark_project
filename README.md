@@ -6,6 +6,7 @@ https://drive.google.com/drive/folders/1rBauyUVCRTbnKXgkMGh4l9MdIOVj8CQc?usp=sha
 ```
 
 2. Install java .exe file
+> note: choose installtion path of java to "C:" drive
 
 3. Extract spark file in C drive
 
@@ -24,7 +25,7 @@ https://drive.google.com/drive/folders/1rBauyUVCRTbnKXgkMGh4l9MdIOVj8CQc?usp=sha
 </tr>
 <tr>
 <td>JAVA_HOME</td>
-<td>C:\Program Files\Java\jdk1.8.0_202</td>
+<td>C:\Java\jdk1.8.0_202</td>
 </tr>
 <tr>
 <td>SPARK_HOME</td>
@@ -67,4 +68,51 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Avnish327030/spark_project.git
 git push -u origin main
+```
+
+## Train random forest model on insurance dataset
+```buildoutcfg
+python training\stage_00_data_loader.py
+```
+```buildoutcfg
+python training\stage_01_data_validator.py.py
+```
+```buildoutcfg
+python training\stage_02_data_transformer.py
+```
+```buildoutcfg
+python training\stage_03_data_exporter.py
+```
+```buildoutcfg
+spark-submit training\stage_04_model_trainer.py
+```
+
+## Prediction using random forest of insurance dataset
+```buildoutcfg
+python prediction\stage_00_data_loader.py
+```
+```buildoutcfg
+python prediction\stage_01_data_validator.py.py
+```
+```buildoutcfg
+python prediction\stage_02_data_transformer.py
+```
+```buildoutcfg
+python prediction\stage_03_data_exporter.py
+```
+```buildoutcfg
+spark-submit prediction\stage_04_model_trainer.py
+```
+
+
+
+
+## start kafka producer using below comman
+```buildoutcfg
+spark-submit csv_to_kafka.py
+```
+
+## start pyspark consumer using below command
+```buildoutcfg
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1  spark_consumer_from_kafka.py
 ```
