@@ -43,7 +43,9 @@ https://drive.google.com/drive/folders/1rBauyUVCRTbnKXgkMGh4l9MdIOVj8CQc?usp=sha
 ```buildoutcfg
 %JAVA_HOME%\bin
 ```
-
+```buildoutcfg
+C:\Java\jre1.8.0_281\bin
+```
 ## Create conda environment 
 
 1. open conda terminal execute below command
@@ -104,6 +106,9 @@ python prediction\stage_03_data_exporter.py
 spark-submit prediction\stage_04_model_trainer.py
 ```
 
+
+
+# start zookeeper and kafka server
 
 
 
