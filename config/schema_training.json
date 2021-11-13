@@ -1,0 +1,14 @@
+{	"SampleFileName": "HealthPrem_26092020_131534.csv",
+	"LengthOfDateStampInFile": 8,
+	"LengthOfTimeStampInFile": 6,
+	"NumberofColumns" : 7,
+	"ColName": {
+				"age" : "Integer",
+				"sex" : "varchar",
+				"bmi" : "float",
+				"children" : "Integer",
+				"smoker" : "varchar",
+				"region": " varchar",
+				"expenses" : "float"
+	}
+}

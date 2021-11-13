@@ -1,0 +1,7 @@
+azure_blob_storage
+insurance_exception
+logger
+mongo_db
+prediction
+streaming
+training

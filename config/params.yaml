@@ -1,0 +1,70 @@
+base:
+  project_id: 5
+  project: insurance-premium
+  random_state: 42
+  test_size: 0.2
+
+
+config:
+  params: config/params.yaml
+  schema_prediction: config/schema_prediction.json
+  schema_training: config/schema_training.json
+
+cloud_provider:
+  name: microsoft
+
+data_download:
+  cloud_training_directory_path: data/training_batch_files/
+  cloud_prediction_directory_path: data/Prediction_Batch_files
+
+artifacts:
+  training_data:
+    good_file_path: artifacts/training_data/Training_Raw_files_validated/Good_raw
+    bad_file_path: artifacts/training_data/Training_Raw_files_validated/Bad_raw
+    archive_bad_file_path: artifacts/training_data/TrainingArchiveBadData
+    training_file_from_db: artifacts/training_data/Training_FileFromDB
+    master_csv: master.csv
+    null_value_info_file_path:  artifacts/training_data/preprocessing/null_value
+    plots: artifacts/training_data/plots
+    pipeline_path: artifacts/pipeline/pipeline_model
+
+  model:
+    model_path: artifacts/model
+
+
+  prediction_data:
+    good_file_path: artifacts/prediction_data/Prediction_Raw_files_validated/Good_raw
+    bad_file_path: artifacts/prediction_data/Prediction_Raw_files_validated/Bad_raw
+    archive_bad_file_path: artifacts/prediction_data/PredictionArchiveBadData
+    prediction_file_from_db: artifacts/prediction_data/Prediction_FileFromDB
+    master_csv: master.csv
+    prediction_output_file_path: artifacts/Prediction_Output_DIR/
+    prediction_file_name: Predictions.csv
+
+data_source:
+  Training_Batch_Files: Training_Batch_Files
+  Prediction_Batch_Files: Prediction_Batch_Files
+
+kafka:
+  topic_name: insurance-premium
+  kafka_bootstrap_server: localhost:9092
+
+
+log_database:
+  training_database_name: insurance_prediction_training
+  prediction_database_name: insurance_prediction_prediction
+
+dataset:
+  unwanted_column:
+      - region
+
+
+  database_detail:
+    training_database_name: insurance_prediction_training
+    prediction_database_name: insurance_prediction_prediction
+    dataset_training_collection_name: insurance_prediction_training_dataset
+    dataset_prediction_collection_name: insurance_prediction_prediction_dataset
+
+target_columns:
+  columns:
+    - expenses
