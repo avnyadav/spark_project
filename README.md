@@ -68,7 +68,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Avnish327030/spark_project.git
+git remote add origin <github_repo_link>
 git push -u origin main
 ```
 
@@ -112,7 +112,7 @@ spark-submit prediction\stage_04_model_trainer.py
 
 
 
-## start kafka producer using below comman
+## start kafka producer using below command
 ```buildoutcfg
 spark-submit csv_to_kafka.py
 ```
