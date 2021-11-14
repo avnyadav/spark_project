@@ -77,7 +77,7 @@ git push -u origin main
 python training\stage_00_data_loader.py
 ```
 ```buildoutcfg
-python training\stage_01_data_validator.py.py
+python training\stage_01_data_validator.py
 ```
 ```buildoutcfg
 python training\stage_02_data_transformer.py
@@ -94,7 +94,7 @@ spark-submit training\stage_04_model_trainer.py
 python prediction\stage_00_data_loader.py
 ```
 ```buildoutcfg
-python prediction\stage_01_data_validator.py.py
+python prediction\stage_01_data_validator.py
 ```
 ```buildoutcfg
 python prediction\stage_02_data_transformer.py
@@ -103,7 +103,7 @@ python prediction\stage_02_data_transformer.py
 python prediction\stage_03_data_exporter.py
 ```
 ```buildoutcfg
-spark-submit prediction\stage_04_model_trainer.py
+spark-submit prediction\stage_04_model_predictor.py
 ```
 
 
